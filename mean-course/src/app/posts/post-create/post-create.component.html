@@ -1,7 +1,13 @@
 <p>post-create works!</p>
 
-<!-- <textarea name="" id="" cols="" rows="6" #postInput> </textarea> -->
-<textarea name="" id="" cols="" rows="6" [(ngModel)]="enteredValue"> </textarea>
+<mat-card>
+    <mat-form-field>
+        <!-- <textarea name="" id="" cols="" rows="6" #postInput> </textarea> -->
+        <textarea matInput name="" id="" cols="" rows="6" [(ngModel)]="enteredValue"> </textarea>
+    </mat-form-field>
+</mat-card>
+
+
 <hr>
 <button (click)="onAddPost()">SAVE post</button>
 <p> {{newPost}} </p>
