@@ -1,7 +1,8 @@
 <p>post-create works!</p>
 
-<textarea name="" id="" cols="" rows="6" #postInput> </textarea>
+<!-- <textarea name="" id="" cols="" rows="6" #postInput> </textarea> -->
+<textarea name="" id="" cols="" rows="6" [(ngModel)]="enteredValue"> </textarea>
 <hr>
-<button (click)="onAddPost(postInput)">SAVE post</button>
+<button (click)="onAddPost()">SAVE post</button>
 <p> {{newPost}} </p>
 
