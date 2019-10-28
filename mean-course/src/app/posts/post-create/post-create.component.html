@@ -5,10 +5,7 @@
         <!-- <textarea name="" id="" cols="" rows="6" #postInput> </textarea> -->
         <textarea matInput name="" id="" cols="" rows="6" [(ngModel)]="enteredValue"> </textarea>
     </mat-form-field>
+    <button mat-raised-button (click)="onAddPost()">SAVE post</button>
 </mat-card>
-
-
-<hr>
-<button (click)="onAddPost()">SAVE post</button>
 <p> {{newPost}} </p>
 
