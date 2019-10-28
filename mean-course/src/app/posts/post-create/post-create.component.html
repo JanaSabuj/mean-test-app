@@ -1,7 +1,7 @@
 <p>post-create works!</p>
 
-<textarea name="" id="" cols="" rows="6"></textarea>
+<textarea name="" id="" cols="" rows="6" #postInput> </textarea>
 <hr>
-<button (click)="onAddPost()">SAVE post</button>
+<button (click)="onAddPost(postInput)">SAVE post</button>
 <p> {{newPost}} </p>
 
