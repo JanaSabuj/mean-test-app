@@ -6,9 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./post-create.component.css']
 })
 export class PostCreateComponent  {
+  newPost = '';
 
  onAddPost() {
    console.log('Post is added!!');
+  // alert('Post is Added');
+   this.newPost = 'The user\'s post is added';
  }
 
 }
