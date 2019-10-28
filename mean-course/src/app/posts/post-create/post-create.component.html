@@ -1,11 +1,10 @@
-<p>post-create works!</p>
 
 <mat-card>
     <mat-form-field>
         <!-- <textarea name="" id="" cols="" rows="6" #postInput> </textarea> -->
         <textarea matInput name="" id="" cols="" rows="6" [(ngModel)]="enteredValue"> </textarea>
     </mat-form-field>
-    <button mat-raised-button (click)="onAddPost()">SAVE post</button>
+    <button mat-raised-button color="primary" (click)="onAddPost()">SAVE post</button>
 </mat-card>
 <p> {{newPost}} </p>
 
