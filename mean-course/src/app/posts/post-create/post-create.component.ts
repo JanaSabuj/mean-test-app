@@ -16,12 +16,15 @@ export class PostCreateComponent  {
 
  onAddPost(form: NgForm) {
     // console.log(this.enteredTitle, this.enteredValue);
-     const post: Post  = {
+    if (form.invalid) {
+      return;
+    }
+    const post: Post  = {
       title: form.value.title,
       content: form.value.content
     };
     // console.log(post);
-     this.postCreated.emit(post);
+    this.postCreated.emit(post);
  }
 
 }
