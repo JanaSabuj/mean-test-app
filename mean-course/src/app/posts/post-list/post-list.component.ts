@@ -5,11 +5,12 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './post-list.component.html',
   styleUrls: ['./post-list.component.css']
 })
-export class PostListComponent implements OnInit {
+export class PostListComponent  {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  posts = [
+    { title: 'First Post', content: 'C1'},
+    { title: 'Second Post', content: 'C2'},
+    { title: 'Third Post', content: 'C3'}
+  ];
 
 }
