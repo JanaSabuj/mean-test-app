@@ -1,5 +1,5 @@
 <!-- <p>post-list works!</p> -->
-<mat-accordion>
+<mat-accordion *ngIf="posts.length > 0">
     <mat-expansion-panel *ngFor="let post of posts">
         <mat-expansion-panel-header>
          {{ post.title}}
@@ -11,3 +11,5 @@
 
     </mat-expansion-panel>
 </mat-accordion>
+
+<p *ngIf="posts.length <= 0 "> NO posts added</p>
