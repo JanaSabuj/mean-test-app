@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EventEmitter } from 'events';
 
 @Component({
   selector: 'app-post-create',
@@ -8,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 export class PostCreateComponent  {
   enteredTitle = '';
   enteredValue = '';
+  postCreated = new EventEmitter();
 
  onAddPost() {
-    console.log(this.enteredTitle, this.enteredValue);
+    // console.log(this.enteredTitle, this.enteredValue);
+     const post: any = {
+      title: this.enteredTitle,
+      content: this.enteredValue
+    };
+    // console.log(post);
+     this.postCreated.emit(post);
  }
 
 }
