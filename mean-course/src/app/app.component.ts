@@ -8,10 +8,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'mean-course';
 
-  posts = []; // global posts array
+  storedPosts = []; // global posts array
 
-  onPostAdded(post) {
-    this.posts.push(post);
+  onPostAdded(post: any) {
+    this.storedPosts.push(post);
   }
 
 }
