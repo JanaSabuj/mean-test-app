@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'mean-course';
+
+  posts = []; // global posts array
+
+  onPostAdded(post) {
+    this.posts.push(post);
+  }
+
 }
