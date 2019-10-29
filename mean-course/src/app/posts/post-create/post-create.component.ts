@@ -25,6 +25,7 @@ export class PostCreateComponent  {
     };
     // console.log(post);
     this.postCreated.emit(post);
+    form.resetForm();
  }
 
 }
