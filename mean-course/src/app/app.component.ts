@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Post } from './posts/post.model';
 
 @Component({
@@ -7,13 +7,42 @@ import { Post } from './posts/post.model';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'mean-course';
 
   storedPosts: Post[] = []; // global posts array
 
+  constructor(private http: HttpClient) {
+
+  }
+
+  ngOnInit() {
+    this.getPosts();
+    console.log(this.storedPosts);
+  }
+
   onPostAdded(post: Post) {
     this.storedPosts.push(post);
+    console.log(this.storedPosts);
+  }
+
+
+  getPosts() {
+    this.http.get<{message: string , posts: Post[]}>('http://localhost:3000/api/posts')
+    .subscribe((postData) => {
+        //  for (let i = 0; i < postData.posts.length; i++) {
+        //    this.storedPosts.push(postData[i]);
+        //  }
+        const jsonData = postData.posts;
+        // console.log(jsonData); // getting the posts
+        // for (let x = 0; x < jsonData.length; x++) {
+        //   this.storedPosts.push(jsonData[x]);
+        // }
+        for (const obj of jsonData) {
+          this.storedPosts.push(obj);
+        }
+        console.log(jsonData);
+    });
   }
 
 }
