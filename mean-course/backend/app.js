@@ -56,8 +56,13 @@ app.get('/api/posts', (req, res, next) => {
       posts: documents
     });
   });
+});
 
-
+app.delete('/api/posts/:id', (req,res,next) => {
+    console.log(req.params);
+    res.status(201).json({
+      message: "DELETED Post Successfully !!!"
+    });
 });
 
 module.exports = app;

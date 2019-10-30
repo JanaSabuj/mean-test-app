@@ -26,4 +26,10 @@ export class PostListComponent  {
   //   postData.
   //   });
   // }
+
+   onDelete(postId: any) {
+      console.log('Delet hit!');
+   }
+
+
 }
