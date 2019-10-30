@@ -28,12 +28,12 @@ app.get('/api/posts', (req, res, next) => {
     {
       id: "fdsfd",
       title: 'First post',
-      content: 'sfhdkjfhsdkfhdskfhdfjhjdksfhdskfh'
+      content: 'Go to Sleep'
     },
     {
       id: "fdsfdfdsfsdf",
       title: 'Second post',
-      content: 'sfhdfdffdkfhdfjhjdksfhdskfh'
+      content: 'Wake Up and LeetCode'
     },
   ];
 

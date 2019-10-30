@@ -31,6 +31,7 @@ export class PostCreateComponent  {
     };
     console.log(post);
     this.postCreated.emit(post);
+    // I will post the 'post' variable
     this.http.post<{message: string}>('http://localhost:3000/api/posts', post)
     .subscribe((responseData) => {
           console.log(responseData);
