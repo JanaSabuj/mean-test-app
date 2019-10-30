@@ -10,7 +10,7 @@ import { Post } from '../post.model';
   styleUrls: ['./post-list.component.css']
 })
 export class PostListComponent  {
-  @Output() updatedPostsToEmit = new EventEmitter<Post[]>();
+  @Output() updatedPostsToEmit = new EventEmitter<string>();
   // posts = [
   //   { title: 'First Post', content: 'C1'},
   //   { title: 'Second Post', content: 'C2'},
@@ -33,8 +33,8 @@ export class PostListComponent  {
       this.http.delete<{message: string}>('http://localhost:3000/api/posts/' + postId)
       .subscribe((message) => {
             console.log(message);
-            const updatedPosts = this.posts.filter( x => x.id !== postId);
-            this.updatedPostsToEmit.emit(updatedPosts);
+            // const updatedPosts = this.posts.filter( x => x.id !== postId);
+            this.updatedPostsToEmit.emit(postId);
             // this.posts = updatedPosts;
       });
    }

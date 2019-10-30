@@ -26,9 +26,11 @@ export class AppComponent implements OnInit {
     console.log(this.storedPosts);
   }
 
-  updatedPostsToEmit(postArr: Post[]) {
-  console.log(postArr);
-  this.storedPosts = postArr;
+  updatedPostsToEmit(postId: string) {
+  console.log(postId);
+  // this.storedPosts = postArr;
+  const updatedPosts = this.storedPosts.filter( x => x.id !== postId);
+  this.storedPosts = updatedPosts;
   }
 
 
