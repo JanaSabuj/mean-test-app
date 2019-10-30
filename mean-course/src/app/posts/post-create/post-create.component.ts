@@ -30,12 +30,14 @@ export class PostCreateComponent  {
       content: form.value.content
     };
     console.log(post);
-    this.postCreated.emit(post);
+
     // I will post the 'post' variable
-    this.http.post<{message: string}>('http://localhost:3000/api/posts', post)
+    this.http.post<{message: string, postId: string}>('http://localhost:3000/api/posts', post)
     .subscribe((responseData) => {
           console.log(responseData);
+          post.id = responseData.postId;
     });
+    this.postCreated.emit(post);
     form.resetForm();
  }
 

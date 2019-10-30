@@ -40,10 +40,14 @@ app.post('/api/posts', (req,res,next) => {
     content: req.body.content
   });
   console.log(post);
-  post.save();
-  res.status(201).json({
-    message: 'Post added!'
-  });// SUCCESS + A new resource created
+  post.save().then( result => {
+    console.log(result);
+    res.status(201).json({
+      message: 'Post added!',
+      postId: result._id
+    });// SUCCESS + A new resource created
+  });
+
 
 });
 

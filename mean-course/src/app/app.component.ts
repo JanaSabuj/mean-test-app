@@ -26,6 +26,11 @@ export class AppComponent implements OnInit {
     console.log(this.storedPosts);
   }
 
+  updatedPostsToEmit(postArr: Post[]) {
+  console.log(postArr);
+  this.storedPosts = postArr;
+  }
+
 
   getPosts() {
     this.http.get<{message: string , posts: any}>

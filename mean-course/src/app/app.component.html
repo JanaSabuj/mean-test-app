@@ -1,7 +1,10 @@
 <app-header></app-header>
 <main>
     <app-post-create (postCreated)="onPostAdded($event)"></app-post-create>
-    <app-post-list [posts]="storedPosts" ></app-post-list>
+    <app-post-list
+    [posts]="storedPosts"
+    (updatedPostsToEmit)="updatedPostsToEmit($event)"
+    ></app-post-list>
 </main>
 
 
