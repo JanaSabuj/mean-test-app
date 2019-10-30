@@ -1,8 +1,20 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
+const mongoose = require('mongoose');
 
 const Post = require('./models/post'); // mongoose post model import
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+mongoose.set('useUnifiedTopology', true);
+mongoose.connect("mongodb+srv://sabuj:!x8FU8rX!tZsxP-@cluster0-mar6m.mongodb.net/test?retryWrites=true&w=majority")
+.then(() => {
+  console.log('MongoDB Cloud Connected!!!');
+})
+.catch(() => {
+  console.log('Error! MOngoDB Cloud broke !!');
+});
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false}));
