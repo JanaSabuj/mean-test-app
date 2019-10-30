@@ -1,5 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 import { Post } from '../post.model';
 import { NgForm } from '@angular/forms';
@@ -14,6 +15,10 @@ export class PostCreateComponent  {
   enteredValue = '';
   @Output() postCreated = new EventEmitter<Post>();
 
+  constructor(private http: HttpClient) {
+
+  }
+
  onAddPost(form: NgForm) {
     // console.log(this.enteredTitle, this.enteredValue);
     if (form.invalid) {
@@ -26,6 +31,10 @@ export class PostCreateComponent  {
     };
     console.log(post);
     this.postCreated.emit(post);
+    this.http.post<{message: string}>('http://localhost:3000/api/posts', post)
+    .subscribe((responseData) => {
+          console.log(responseData);
+    });
     form.resetForm();
  }
 
