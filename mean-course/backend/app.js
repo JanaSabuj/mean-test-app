@@ -9,7 +9,7 @@ mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
 
-mongoose.connect("mongodb+srv://sabuj:qwerty1234@cluster0-mar6m.mongodb.net/test?retryWrites=true&w=majority", function() { /* dummy function */ })
+mongoose.connect("mongodb+srv://sabuj_1:qwerty1234@cluster0-mar6m.mongodb.net/node-angular?retryWrites=true&w=majority", function() { /* dummy function */ })
 .then(() => {
   console.log('GOOD');
 })
@@ -40,6 +40,7 @@ app.post('/api/posts', (req,res,next) => {
     content: req.body.content
   });
   console.log(post);
+  post.save();
   res.status(201).json({
     message: 'Post added!'
   });// SUCCESS + A new resource created
