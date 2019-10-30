@@ -29,6 +29,10 @@ export class PostListComponent  {
 
    onDelete(postId: any) {
       console.log('Delet hit!');
+      this.http.delete<{message: string}>('http://localhost:3000/api/posts/' + postId)
+      .subscribe((message) => {
+            console.log(message);
+      });
    }
 
 
