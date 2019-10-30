@@ -14,7 +14,6 @@ export class AppComponent implements OnInit {
   storedPosts: Post[] = []; // global posts array
 
   constructor(private http: HttpClient) {
-
   }
 
   ngOnInit() {
